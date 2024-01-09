@@ -1,0 +1,86 @@
+EX: 3
+
+FILES:
+JobContext.h -- header file containing the structs and ThreadContext and Job Context which is
+related to the threads and the job.
+Barrier.h -- The barrier header that was given in the EX3 resources.
+Barrier.cpp -- The barrier implementation that was given in the EX3 resources.
+MapReduceFramework.cpp -- The implementation of our program the MapReduceFramework.h
+fileWordCounter_comparison.png -- the graph of MultiThreadingLevel vs. Time.
+README -- this file.
+
+REMARK:
+In the fileWordCounter_comparison graph, we pay attention that after running our program on
+FileWordCounter we usually  get around the same time each time even though we increase the number
+of threads, this is due to the PC we are running our program on(Aquarium computer) and results
+from our computer having (all the specs are written at the end of the file) we have 4
+processors and so 4 cores where each core has 1 thread.
+
+Question 1:
+Since the program is cpu bounded it would result in the program being faster if the cpu is faster,
+and so the optimal number would be as the machine's number of of cores since usually
+each core contains  two hyper threads that run the program, and so the limitation here
+is in the hardware and the optimal number is the number of the machine/computer threads.
+Question 2:
+a)
+The line would be printed 2n times, which is reasonable since we have the fork function that
+results in the code being duplicated into the father and the son, and so n threads would be
+printed by the child threads and the other n would be printed by the father threads.
+
+b)
+Since we have 2n threads, n threads are created by the child and another n threads which are
+created by the son,  and so we have n! options for the child and another n!.
+and so we get (n!)^2 options in total
+
+NOTES:
+COMPUTER SPECS:
+
+Architecture: x86_64 df
+
+CPU op-mode(s): 32-bit, 64-bit
+
+Byte Order: Little Endian
+
+Address sizes: 39 bits physical, 48 bits virtual
+
+CPU(s): 4
+
+On-line CPU(s) list: 0-3
+
+Thread(s) per core: 1
+
+Core(s) per socket: 4
+
+Socket(s): 1
+
+NUMA node(s): 1
+
+Vendor ID: GenuineIntel
+
+CPU family: 6
+
+Model: 94
+
+Model name: Intel(R) Core(TM) i5-6600 CPU @ 3.30GHz
+
+Stepping: 3
+
+CPU MHz: 3879.965
+
+CPU max MHz: 3900.0000
+
+CPU min MHz: 800.0000
+
+BogoMIPS: 6624.00
+
+Virtualization: VT-x
+
+L1d cache: 32K
+
+L1i cache: 32K
+
+L2 cache: 256K
+
+L3 cache: 6144K
+
+NUMA node0 CPU(s): 0-3
